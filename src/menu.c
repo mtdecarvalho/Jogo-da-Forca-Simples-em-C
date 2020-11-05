@@ -106,8 +106,7 @@ void regras()
     printf(
     "\t\t# REGRAS #\n\n"
     "# 1 # A forca nao faz distincao entre letras maiusculas e minusculas.\n"
-    "# 2 # O tamanho maximo da frase secreta eh de 100 caracteres.\n"
-    "# 3 # A frase secreta escondera apenas letras de A ate Z (acentos nao incluidos). Qualquer outro caractere sera revelado.\n"
-    "# 4 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
+    "# 2 # A frase secreta escondera apenas letras de A ate Z (acentos nao incluidos). Qualquer outro caractere sera revelado.\n"
+    "# 3 # Apenas uma letra eh aceita por chute. No caso de mais de uma letra ser informada, apenas a primeira sera considerada.\n\n");
     pausartela();
 }

@@ -34,16 +34,26 @@ int main ()
         
         if (l == 0)
         {
-            //leitura de frase
-            printf("Insira a frase secreta: "); 
-            fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
-            while ( ehvalido(secreta) != 1  )
+            printf("Deseja inserir a frase secreta? [s / n]\n");
+            scanf(" %c", &input); limpa();
+            switch (input)
             {
-                memset(secreta, 0, tammax);
-                printf("Frase invalida. Tente novamente: ");
-                fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
+                case 's':
+                    //leitura de frase
+                    printf("Insira a frase secreta: "); 
+                    fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
+                    while ( ehvalido(secreta) != 1  )
+                    {
+                        memset(secreta, 0, tammax);
+                        printf("Frase invalida. Tente novamente: ");
+                        fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
+                    }
+                    if (secreta[strlen(secreta)+1] == '\n') secreta[strlen(secreta)+1] = '\0';
+                    break;
+                case 'n':
+                    selecionar(secreta);
+                    break;
             }
-            secreta[strlen(secreta)-1] = '\0';
             tam[0] = strlen(secreta);
             //manipulacao da frase
             for (i = 0 ; i < tam[0] ; i++)
