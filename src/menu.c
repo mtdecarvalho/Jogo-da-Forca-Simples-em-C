@@ -54,14 +54,14 @@ int lerTecla()
 
 int menu()
 {
+   char opcoes [][20] = {"Iniciar jogo", "Regras", "Sair"};
    char tecla;
    int i, opc=0, opcant=-1, qtd=3, tam;
-   char opcoes [][20] = {"Iniciar jogo", "Regras", "Sair"};
    do
    {
       limpartela();
       printf(
-      "\t\tJOGO DA FORCA\n\n"
+      "\t     JOGO  DA  FORCA\n\n"
       "\t             XXXXXX\n"
       "\t             X    X\n"
       "\t             O    X\n"
@@ -82,7 +82,8 @@ int menu()
          tam = 0;
          if (i == 2) printf("\t+-----------------------+\n");
       }
-      printf("      Use W e S para mover o cursor.\n");
+      printf("      Use W e S para mover o cursor\n"
+             "           Enter para confirmar\n");
       tecla = lerTecla(); opcant = opc;
       switch(tecla)
       {
@@ -93,7 +94,7 @@ int menu()
                   if (opc>=qtd) opc = 0;
                   break; 
       }
-   } while (tecla != 32);
+   } while (tecla != '\n');
    if (tecla == 27 || opc == qtd-1)
       return 0;
    else 

@@ -38,7 +38,7 @@ int main ()
             scanf(" %c", &input); limpa();
             switch (input)
             {
-                case 's':
+                case 's': case 'S':
                     //leitura de frase
                     printf("Insira a frase secreta: "); 
                     fgets(secreta, tammax, stdin); if ( strlen(secreta) == tammax-1 ) { limpa(); }
@@ -50,7 +50,7 @@ int main ()
                     }
                     if (secreta[strlen(secreta)+1] == '\n') secreta[strlen(secreta)+1] = '\0';
                     break;
-                case 'n':
+                default:
                     selecionar(secreta);
                     break;
             }
